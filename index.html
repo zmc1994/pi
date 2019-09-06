@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>π Memorization Game</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div id="welcomePage" class="page active">
+        <div class="welcomePic">
+<!--            <img src="./images/welcome-logo.png" alt="">-->
+            <img src="./images/welbg.png" alt="">
+            <img src="./images/pi.png" alt="" id="piPic">
+        </div>
+        <div class="welcomeText">
+            <p class="welcomeMsg">欢迎挑战</p>
+            <p class="timeLine">2019</p>
+        </div>
+    </div>
+
+    <div id="introducePage" class="page">
+        <p class="ruleTitle">挑战规则</p>
+        <div class="timeWrap">
+            <span class="timeNumber">8</span>
+            <span>秒</span>
+        </div>
+        <p class="ruleMsg">记住更多的数字</p>
+        <div class="timeWrap">
+            <span class="timeNumber">15</span>
+            <span>秒</span>
+        </div>
+        <p class="ruleMsg">输入更多正确数字</p>
+<!--        <p class="giftMsg">进入排行榜，赢取礼品。</p>-->
+        <div class="startWrap">
+            <img src="./images/start-btn.png" alt="" id="startBtn">
+        </div>
+    </div>
+
+    <div id="studyPage" class="page">
+        <div class="rememberTime">
+            <span id="timeNumber">08</span>
+            <span>:</span>
+            <span id="study-ms">00</span>
+        </div>
+        <p class="rememberText">努力记住更多数字</p>
+        <div class="piWrap">
+            <p>π=</p>
+            <p>3.14159265358979323846264338327950288419716939937510582097494459230781640628620899862803482</p>
+        </div>
+    </div>
+
+    <div id="playPage" class="page">
+        <div class="rememberTime">
+            <span id="playTime">15</span>
+            <span>:</span>
+            <span id="play-ms">00</span>
+        </div>
+        <p class="rememberText">输入正确数字</p>
+        <div class="inputWrap">
+            <p class="titlePi">π=</p>
+            <div class="numberWrap" id="inputNumber">
+                <span>3.14</span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div id="number-pad">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>0</span>
+        </div>
+
+    </div>
+    <div id="resultPage" class="page">
+        <div id="timeOver">
+            <p class="endTitle">时间到</p>
+            <img src="./images/over-icon.png" alt="" class="endIcon">
+            <p class="endText">在<span>15</span>秒内</p>
+            <p class="endText">您输入<span id="correctNumber">0</span>个正确数字</p>
+            <img src="./images/over.png" alt="" class="endPic">
+        </div>
+        <div id="inputWrong">
+            <p class="endTitle">输入错误</p>
+            <img src="./images/wrong-icon.png" alt="" class="endIcon">
+            <p class="endText">在<span id="failTime">0</span>秒内</p>
+            <p class="endText">您输入<span id="failNumber">0</span>个正确数字</p>
+            <img src="./images/over.png" alt="" class="endPic">
+        </div>
+    </div>
+    <div id="failPage" class="page">
+        <div>
+            <p class="successTitle">您获得</p>
+            <p class="listNumber">第<span id="otherGameResult">4200</span>名</p>
+        </div>
+        <div>
+            <p class="personTitle">再接再厉!</p>
+        </div>
+        <img src="./images/over.png" alt="" class="upPic">
+    </div>
+    <div id="uploadPage" class="page">
+        <div>
+            <p class="successTitle">恭喜您获得</p>
+            <p class="listNumber">第<span id="gameResult"></span>名</p>
+        </div>
+        <div>
+            <p class="personTitle">登记个人信息</p>
+            <img src="./images/arrow-icon.png" alt="" class="arrowIcon">
+            <input type="text" class="nameInput" placeholder="姓名">
+            <button class="uploadBtn"  id="upBtn">提交</button>
+        </div>
+        <img src="./images/uploadPage.png" alt="" class="upPic">
+    </div>
+    <div id="chartsPage" class="page">
+        <img src="./images/chart-text.png" alt="" class="chartPic">
+        <div class="chartListWrap">
+            <div class="listTitle">
+                <span class="listNum"></span>
+                <span class="listName">姓名</span>
+                <span class="listRanking">成绩</span>
+            </div>
+            <ul class="list" id="listRank">
+                <li class="clear">
+                    <span class="listNum">1</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+                <li class="clear">
+                    <span class="listNum">2</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+                <li class="clear">
+                    <span class="listNum">3</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+                <li class="clear">
+                    <span class="listNum">4</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+                <li class="clear">
+                    <span class="listNum">5</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+                <li class="clear">
+                    <span class="listNum">6</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+                <li class="clear">
+                    <span class="listNum">7</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+                <li class="clear">
+                    <span class="listNum">8</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+                <li class="clear">
+                    <span class="listNum">9</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+                <li class="clear">
+                    <span class="listNum">10</span>
+                    <span class="listName"></span>
+                    <span class="listRanking"></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 隐藏域用于输入比较-->
+    <div id="hideNumber" style="display: none;"></div>
+</body>
+</html>

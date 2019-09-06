@@ -1,0 +1,503 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    overflow: hidden;
+    font-size: 5vw;
+    font-weight: 300;
+    position: fixed;
+}
+img{
+    display: block;
+    width: 100%;
+}
+ul li{
+    list-style: none;
+}
+.clear{
+    content: "";
+    overflow: hidden;
+    clear: both;
+}
+@font-face {
+    font-family: NotoSan;
+    src: url("../font/NotoSan.woff") format("woff");
+}
+@font-face {
+    font-family: ProductSans;
+    src: url("../font/ProductSans.woff") format("woff");
+}
+
+/* -- Pages -- */
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transform:translateY(100%);
+    transition: 1s; transition-timing-function: cubic-bezier(0.8,0.1,0.2,0.9);
+    pointer-events: none;
+    background: url("../images/bg.jpg") top center no-repeat;
+    background-size: cover;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateY(0%);
+    pointer-events: all;
+}
+
+.page.inactive {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+
+/* -- #pwelcomePage -- */
+#welcomePage{
+    padding-top: 5vw;
+    box-sizing: border-box;
+}
+#welcomePage .welcomePic{
+    pointer-events: none;
+    position: relative;
+}
+#welcomePage .welcomePic img{
+    width: 98%;
+    display: block;
+    margin: 0 auto;
+}
+#welcomePage .welcomeText{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 15vh;
+    color: #4285f4;
+    pointer-events: none;
+}
+#welcomePage .welcomeMsg{
+    font-size: 10vw;
+    line-height: 10vw;
+    font-family: NotoSan;
+}
+#welcomePage .timeLine{
+    font-size: 5vw;
+    line-height: 5vw;
+    margin-top: 40px;
+    font-family: ProductSans;
+}
+#welcomePage #piPic{
+    width: 20vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    animation: moveBig 2s infinite;
+}
+@keyframes moveBig {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@-webkit-keyframes moveBig {
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.3);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+/* -- #introducePage -- */
+#introducePage{
+    font-family: NotoSan;
+}
+#introducePage .ruleTitle{
+    text-align: center;
+    color: #4285f4;
+    font-size: 7vw;
+    padding-top: 10vh;
+}
+#introducePage .ruleMsg{
+    text-align: center;
+    color: #000000;
+    font-size: 4vw;
+}
+#introducePage .giftMsg{
+    text-align: center;
+    color: #4285f4;
+    font-size: 2vw;
+}
+#introducePage .startWrap img{
+    width: 66%;
+    margin: 0 auto;
+}
+#introducePage .timeWrap{
+    text-align: center;
+    font-size: 8vw;
+    font-family: ProductSans;
+    color: #4285f4;
+}
+#introducePage .timeNumber{
+    font-size: 15vw;
+    color: #4285f4;
+}
+#startBtn{
+    animation: flash 2s infinite;
+}
+@keyframes flash {
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: .6;
+    }
+    50%{
+        opacity: .2;
+    }
+    75%{
+        opacity: .6;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@-webkit-keyframes flash {
+    0%{
+        opacity: 1;
+    }
+    25%{
+        opacity: .6;
+    }
+    50%{
+        opacity: .2;
+    }
+    75%{
+        opacity: .6;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* -- #studyPage -- */
+#studyPage .rememberTime,#playPage .rememberTime{
+    text-align: center;
+    padding: 70px 0;
+    width: 100%;
+    font-size: 8vw;
+    color: #000000;
+    font-family: ProductSans;
+}
+#studyPage .rememberTime span:nth-of-type(2),#playPage .rememberTim:nth-of-type(2){
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+}
+#studyPage .rememberText,#playPage .rememberText{
+    color: #4285f4;
+    font-size: 7vw;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: NotoSan;
+    font-weight: 300;
+}
+#studyPage .piWrap{
+    width: 85%;
+    border: 5px solid #4285f4;
+    border-radius: 50px;
+    margin: 0 auto;
+    color: #3c4043;
+    font-family: ProductSans;
+}
+#studyPage .piWrap p:nth-of-type(1){
+    text-align: center;
+    width: 100%;
+}
+#studyPage .piWrap p:nth-of-type(2){
+    width: 100%;
+    padding: 20px 60px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    letter-spacing: 12px;
+    font-size: 8vw;
+    line-height: 10vw;
+    text-align: center;
+}
+#timeNumber,#playTime,#study-ms,#play-ms{
+    width: 105px;
+    display: inline-block;
+}
+/* -- #playPage -- */
+#playPage .inputWrap{
+    width: 85%;
+    border: 5px solid #4285f4;
+    border-radius: 50px;
+    margin: 0 auto;
+    color: #3c4043;
+    font-family: ProductSans;
+    text-align: center;
+    margin-bottom: 40px;
+}
+#playPage .titlePi{
+    padding: 20px 0;
+}
+#playPage .numberWrap span{
+    width: 50px;
+    height: 60px;
+    border: 1px solid #000000;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 40px;
+}
+#playPage .numberWrap span:nth-of-type(1){
+    width: 240px;
+    text-align: right;
+    letter-spacing: 20px;
+    border: none;
+    font-size: 6vw;
+}
+#number-pad{
+    width: 70vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+#number-pad span{
+    width: 12vw;
+    height: 12vw;
+    line-height: 12vw;
+    border: 1px solid #4285f4;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 4vw;
+    margin-bottom: 20px;
+}
+/* -- #resultPage -- */
+#resultPage .endTitle{
+    color: #4285f4;
+    font-size: 7vw;
+    text-align: center;
+    font-family: NotoSan;
+    padding: 200px 0 80px;
+}
+#resultPage .endIcon{
+    width: 20vw;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+#resultPage .endPic{
+    width: 80vw;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#resultPage .endText{
+    color: #000000;
+    text-align: center;
+    font-size: 4vw;
+    font-family: Adobe 宋体 Std;
+    font-weight: bolder;
+}
+#resultPage .endText span{
+    color: #4285f4;
+    padding: 0 10px;
+}
+#timeOver,#inputWrong{
+    display: none;
+}
+/* -- #failPage -- */
+#failPage .successTitle{
+    text-align: center;
+    color: #4285f4;
+    font-size: 7vw;
+    padding: 250px  0 50px;
+}
+#failPage .listNumber{
+    text-align: center;
+    width: 100%;
+    font-size: 10vw;
+    height: 22vw;
+    line-height: 22vw;
+    color: #4285f4;
+    padding-bottom: 50px;
+}
+#failPage .listNumber span{
+    background: url("../images/numberBg.png") top center no-repeat;
+    background-size: contain;
+    width: 22vw;
+    height: 22vw;
+    line-height: 22vw;
+    vertical-align: top;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 7vw;
+    font-family: ProductSans;
+}
+#failPage .personTitle{
+    text-align: center;
+    font-size: 4vw;
+    color: #4285f4;
+}
+/* -- #uploadPage -- */
+#uploadPage .successTitle{
+    text-align: center;
+    color: #4285f4;
+    font-size: 7vw;
+    padding: 250px  0 50px;
+}
+#uploadPage .listNumber{
+    text-align: center;
+    font-size: 15vw;
+    color: #4285f4;
+    padding-bottom: 50px;
+}
+#uploadPage .listNumber span{
+    background: url("../images/numberBg.png") top center no-repeat;
+    background-size: cover;
+    width: 20vw;
+    height: 20vw;
+    line-height: 20vw;
+    text-align: center;
+    color: #ffffff;
+    display: inline-block;
+    margin: 0 20px;
+}
+#uploadPage .personTitle{
+    text-align: center;
+    font-size: 4vw;
+    color: #3c4043;
+}
+#uploadPage .arrowIcon{
+    width: 20px;
+    margin: 10px auto;
+}
+#uploadPage .nameInput{
+    width: 35vw;
+    height: 7vw;
+    font-size: 4vw;
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #4285f4;
+    background: transparent;
+    text-align: center;
+    color: #4285f4;
+    border-radius: 40px;
+    outline: none;
+}
+#uploadPage .nameInput::-webkit-input-placeholder{
+    color: #4285f4;
+}
+#uploadPage .uploadBtn{
+    width: 20vw;
+    height: 7vw;
+    border-radius: 40px;
+    font-size: 4vw;
+    margin: 0 auto;
+    color: #ffffff;
+    background: #f3a200;
+    display: block;
+    margin-top: 60px;
+    outline: none;
+    border: none;
+}
+#uploadPage .upPic{
+    width: 130vw;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* -- #chartsPage -- */
+#chartsPage{
+    background: url("../images/chart-bg.jpg") top center no-repeat;
+    background-size: cover;
+    font-family: ProductSans;
+}
+#chartsPage .chartPic{
+    width: 44vw;
+    position: absolute;
+    top: 55vh;
+    left: 5vw;
+}
+#chartsPage .chartListWrap{
+    position: absolute;
+    top: 6vh;
+    right: 4vw;
+    width: 40vw;
+}
+#chartsPage .listNum{
+    width: 8vw;
+    height: 8vw;
+    line-height: 8vw;
+    color: #ffffff;
+    font-size: 4vw;
+    float: left;
+    background: #4285f4;
+    border-radius: 50%;
+    text-align: center;
+
+}
+#chartsPage .listName{
+    width: 22vw;
+    float: left;
+    text-align: left;
+    padding-left: 20px;
+    box-sizing: border-box;
+    height: 8vw;
+    line-height: 8vw;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 4vw;
+    font-weight: 500;
+}
+#chartsPage .listRanking{
+    width: 10vw;
+    float: left;
+    height: 8vw;
+    line-height: 8vw;
+    text-align: center;
+    color: #4285f4;
+}
+#chartsPage .list li{
+    margin-bottom: 30px;
+    height: 8vw;
+    line-height: 8vw;
+}
+#chartsPage .listTitle .listNum{
+    background: none;
+}
+#chartsPage .listTitle .listName{
+    font-size: 4vw;
+    color: #4285f4;
+    font-weight: 200;
+}
+#chartsPage .listTitle .listRanking{
+    font-size: 4vw;
+    font-weight: 200;
+}
+
+
+

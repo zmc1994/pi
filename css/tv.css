@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+img{
+    width: 100%;
+    display: block;
+}
+ul li{
+    list-style: none;
+}
+.pr{
+    position: relative;
+}
+.clear{
+    content: "";
+    overflow: hidden;
+    clear: both;
+}
+@font-face {
+    font-family: NotoSan;
+    src: url("../font/NotoSan.woff") format("woff");
+}
+@font-face {
+    font-family: ProductSans;
+    src: url("../font/ProductSans.woff") format("woff");
+}
+#chartsPage{
+    background: url("../images/tv-bg.jpg") top center no-repeat;
+    background-size: cover;
+    border: 20px solid #4285f4;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: ProductSans;
+}
+#chartsPage .textPic{
+    width: 32vw;
+    position: absolute;
+    top: 50px;
+    right: 70px;
+}
+#chartsPage .titlePic{
+    width: 17vw;
+    position: absolute;
+    top: 55%;
+    right: 70px;
+    transform: translateY(-55%);
+}
+#chartsPage .chartList{
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+}
+#chartsPage .list{
+    float: left;
+    width: 50%;
+}
+#chartsPage .iconPic{
+    width: 35px;
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+#chartsPage .ranking{
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    background: #4285f4;
+    color: #ffffff;
+    font-size: 38px;
+    display: inline-block;
+    vertical-align: top;
+}
+#chartsPage .name{
+    color: #000000;
+    width: 250px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#chartsPage .totalNumber{
+    color: #4285f4;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    width: 60px;
+    line-height: 60px;
+    height: 60px;
+    font-size: 30px;
+}
+#chartsPage .listContent li{
+    margin-bottom: 80px;
+}
+#chartsPage .titleWrap{
+    margin-bottom: 30px;
+}
+#chartsPage .titleWrap span{
+    color: #4285f4;
+    display: inline-block;
+    font-size: 25px;
+    font-family: NotoSan;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: top;
+    text-align: center;
+}
+#chartsPage .titleWrap span:nth-of-type(2){
+    width: 250px;
+    text-align: center;
+}
